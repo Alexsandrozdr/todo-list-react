@@ -10,10 +10,10 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const loadData = () => {
+    const loadData = async () => {
       setLoading(true);
 
-      const res = fetch(API + "/todos")
+      const res = await fetch(API + "/todos")
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err));
