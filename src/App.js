@@ -13,12 +13,10 @@ function App() {
     const loadData = async () => {
       setLoading(true);
 
-      const res = await fetch(API + "/todos")
-        .then((res) => res.json())
-        .then((data) => data)
-        .catch((err) => console.log(err));
+      const res = await fetch(API + "/todos");
+      const data = await res.json();
       setLoading(false);
-      setTodos(res);
+      setTodos(data);
     };
     loadData();
   }, []);
